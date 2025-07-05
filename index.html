@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saran Voter Information System</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>📊</text></svg>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="gradient-background">
+    <div class="container mt-4">
+        <div class="text-center mb-4">
+            <h1 class="animate__animated animate__fadeInDown page-title">Saran Voter Information System</h1>
+            <div class="animate__animated animate__fadeIn animate__delay-1s">
+                <span class="badge bg-primary-gradient me-1">Chapra, Bihar</span>
+            </div>
+        </div>
+        
+        <div class="row mb-4 animate__animated animate__fadeInUp">
+            <div class="col-md-12">
+                <div class="card feature-card">
+                    <div class="card-header bg-primary-gradient text-white">
+                        <h5 class="mb-0"><i class="bi bi-filter-square"></i> Data Selection</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <label for="subdivision" class="form-label">Subdivision</label>
+                                <select id="subdivision" class="form-select custom-select">
+                                    <option value="">Select Subdivision</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label for="block" class="form-label">Block</label>
+                                <select id="block" class="form-select custom-select" disabled>
+                                    <option value="">Select Block</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label for="panchayat" class="form-label">Panchayat</label>
+                                <select id="panchayat" class="form-select custom-select" disabled>
+                                    <option value="">Select Panchayat</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="text-center mt-2">
+                            <button id="searchBtn" class="btn btn-primary-gradient" disabled><i class="bi bi-search"></i> Search</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card mb-4 animate__animated animate__fadeInUp">
+            <div class="card-header bg-info-gradient text-white">
+                <h5 class="mb-0"><i class="bi bi-geo-alt"></i> Polling Stations</h5>
+            </div>
+            <div class="card-body">
+                <div id="assemblyInfo" class="alert alert-primary mb-3 d-none">
+                    <h5 class="mb-0"><i class="bi bi-building"></i> <span id="assemblyName"></span> <span class="badge bg-secondary" id="assemblyNo"></span></h5>
+                </div>
+                <div class="table-responsive">
+                    <table id="pollingStationTable" class="table table-striped table-bordered custom-table">
+                        <thead>
+                            <tr>
+                                <th>Polling Station No.</th>
+                                <th>Polling Station Name</th>
+								<th>Polling Station No (2003)</th>
+                                <th>Polling Station Name (2003)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Polling station data will be displayed here -->
+                        </tbody>
+                    </table>
+                </div>
+                <div id="noDataMessage" class="alert alert-info mt-3 d-none">
+                    Please select a Subdivision, Block, and Panchayat to view polling stations.
+                </div>
+            </div>
+        </div>
+        
+        <div class="card mb-4 animate__animated animate__fadeInUp">
+            <div class="card-header bg-secondary-gradient text-white">
+                <h5 class="mb-0"><i class="bi bi-map"></i> Pre and Post Delimitation of Assembly</h5>
+            </div>
+            <div class="card-body">
+                <div class="alert alert-info mb-3">
+                    <h6 class="mb-0"><i class="bi bi-info-circle"></i> Assembly Constituency Changes After Delimitation</h6>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered custom-table">
+                        <thead>
+                            <tr>
+                                <th>New Assembly Constituency</th>
+                                <th>Old Assembly Constituency</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>113-Ekma</td>
+                                <td>35-Manjhi</td>
+                            </tr>
+                            <tr>
+                                <td>114-Manjhi</td>
+                                <td>36-Baniyapur</td>
+                            </tr>
+                            <tr>
+                                <td>115-Baniyapur</td>
+                                <td>37-Mashrakh</td>
+                            </tr>
+                            <tr>
+                                <td>116-Taraiya</td>
+                                <td>38-Taraiya</td>
+                            </tr>
+                            <tr>
+                                <td>117-Madhaura</td>
+                                <td>39-Madhaura</td>
+                            </tr>
+                            <tr>
+                                <td>118-Chhapra</td>
+                                <td>40-Jalalpur</td>
+                            </tr>
+                            <tr>
+                                <td>119-GARKHA  (SC)</td>
+                                <td>41-Chhapra</td>
+                            </tr>
+                            <tr>
+                                <td>120-AMNOUR</td>
+                                <td>42-GARKHA</td>
+                            </tr>
+                            <tr>
+                                <td>121-Parsa</td>
+                                <td>43-Parsa</td>
+                            </tr>
+							<tr>
+                                <td>122-Sonpur</td>
+                                <td>44-Sonpur</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card mb-4 animate__animated animate__fadeInUp data-upload-footer">
+            <div class="card-header bg-secondary-gradient text-white">
+                <h5 class="mb-0"><i class="bi bi-upload"></i> Administrative Tools</h5>
+            </div>
+            <div class="card-body">
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <div class="small text-muted">Upload Excel file here.</div>
+                    </div>
+                    <div class="col-md-4 text-end">
+                        <input class="form-control form-control-sm mb-2" type="file" id="excelFile" accept=".xlsx, .xls">
+                        <button id="uploadBtn" class="btn btn-sm btn-secondary-gradient"><i class="bi bi-cloud-upload"></i> Update Data</button>
+                        <div id="uploadStatus" class="mt-2 small"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="footer mt-auto py-3">
+        <div class="container text-center">
+            <p class="text-muted mb-0"><span class="fw-bold text-primary">District Administration Saran</span> | &copy; 2025 Saran Voter Information System</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

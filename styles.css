@@ -1,0 +1,268 @@
+/* Main Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 60px;
+}
+
+.gradient-background {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background-attachment: fixed;
+}
+
+.container {
+    max-width: 1200px;
+}
+
+.page-title {
+    color: #3a1c71;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    letter-spacing: 1px;
+}
+
+.subtitle {
+    color: #555;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+/* Card Styling */
+.card {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border: none;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+    font-weight: 600;
+    padding: 1rem 1.5rem;
+}
+
+.feature-card {
+    border-left: 5px solid #4e54c8;
+}
+
+.data-upload-footer {
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+.data-upload-footer:hover {
+    opacity: 1;
+}
+
+/* Form Controls */
+.form-select, .form-control {
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.form-select:focus, .form-control:focus {
+    border-color: #4e54c8;
+    box-shadow: 0 0 0 0.25rem rgba(78, 84, 200, 0.25);
+    background-color: #fff;
+}
+
+.custom-select {
+    background-image: linear-gradient(to right, #f5f7fa, #c3cfe2);
+    font-weight: 500;
+}
+
+.custom-select:disabled {
+    background-image: linear-gradient(to right, #e9ecef, #dee2e6);
+    opacity: 0.7;
+}
+
+/* Buttons */
+.btn {
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: none;
+    letter-spacing: 0.5px;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary-gradient {
+    background-image: linear-gradient(to right, #4e54c8, #8f94fb);
+    color: white;
+}
+
+.btn-primary-gradient:hover {
+    background-image: linear-gradient(to right, #3a42c8, #7a80fb);
+    color: white;
+}
+
+.btn-secondary-gradient {
+    background-image: linear-gradient(to right, #606c88, #3f4c6b);
+    color: white;
+}
+
+.btn-secondary-gradient:hover {
+    background-image: linear-gradient(to right, #4b5578, #2d3a59);
+    color: white;
+}
+
+.btn i {
+    margin-right: 5px;
+}
+
+/* Table Styling */
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+    vertical-align: middle;
+    border-color: #dee2e6;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.custom-table {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.table th {
+    background-image: linear-gradient(to right, #4e54c8, #8f94fb);
+    color: white;
+    font-weight: 600;
+    text-align: center;
+    padding: 12px;
+    border: none;
+}
+
+.table td {
+    vertical-align: middle;
+    padding: 12px;
+    border-bottom: 1px solid #e9ecef;
+    transition: background-color 0.2s ease;
+}
+
+.table tbody tr:hover td {
+    background-color: rgba(78, 84, 200, 0.05);
+}
+
+/* Delimitation Table Styling */
+.card:has(.bi-map) .table th {
+    background-image: linear-gradient(to right, #606c88, #3f4c6b);
+}
+
+.card:has(.bi-map) .table td {
+    font-weight: 500;
+    text-align: center;
+}
+
+.card:has(.bi-map) .table tbody tr:nth-child(odd) td {
+    background-color: rgba(96, 108, 136, 0.05);
+}
+
+.card:has(.bi-map) .table tbody tr:hover td {
+    background-color: rgba(96, 108, 136, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .card-body {
+        padding: 1rem;
+    }
+    
+    .table-responsive {
+        overflow-x: auto;
+    }
+    
+    .page-title {
+        font-size: 1.8rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+}
+
+/* Footer Styling */
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Gradient Backgrounds */
+.bg-primary-gradient {
+    background-image: linear-gradient(to right, #4e54c8, #8f94fb);
+}
+
+.bg-info-gradient {
+    background-image: linear-gradient(to right, #2193b0, #6dd5ed);
+}
+
+.bg-secondary-gradient {
+    background-image: linear-gradient(to right, #606c88, #3f4c6b);
+}
+
+/* Badge Styling */
+.badge {
+    padding: 8px 15px;
+    border-radius: 30px;
+    font-weight: 500;
+    font-size: 0.8rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    transition: transform 0.3s ease;
+}
+
+.badge:hover {
+    transform: translateY(-2px);
+}
+
+/* Upload status messages */
+#uploadStatus {
+    font-weight: 500;
+}
+
+.status-success {
+    color: #198754;
+    animation: fadeIn 0.5s ease;
+}
+
+.status-error {
+    color: #dc3545;
+    animation: fadeIn 0.5s ease;
+}
+
+.status-warning {
+    color: #ffc107;
+    animation: fadeIn 0.5s ease;
+}
+
+.status-info {
+    color: #0dcaf0;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
